@@ -1,4 +1,4 @@
-/* HERO SECTION (Reference variant-design.png Recreation) */
+/* HERO SECTION */
 
 .hero-section {
   position: relative;
@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 120px 0 80px 0;
-  overflow: hidden;
+  padding: 140px 0 80px 0;
+  overflow: visible;
   z-index: 1;
 }
 
@@ -64,7 +64,7 @@
 
 .hero-text-my {
   font-family: var(--font-serif);
-  font-size: 8rem;
+  font-size: clamp(5.5rem, 7vw, 8rem);
   font-weight: 400;
   line-height: 0.95;
   color: #ffffff;
@@ -97,12 +97,13 @@
   display: inline-flex;
   align-items: center;
   margin-bottom: 28px;
+  max-width: 100%;
 }
 
 .hero-text-portfolio {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 10.5rem;
+  font-size: clamp(7rem, 9.2vw, 10.5rem);
   font-weight: 400;
   line-height: 0.85;
   color: var(--accent-red);
@@ -212,10 +213,9 @@
 
 /* Scroll Explore Prompt */
 .scroll-explore {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
   z-index: 5;
 }
 
@@ -244,52 +244,4 @@
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(6px); }
   60% { transform: translateY(3px); }
-}
-
-/* Bottom Right Variant Badge */
-.variant-floating-badge {
-  position: absolute;
-  bottom: 24px;
-  right: 32px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(18, 18, 22, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 10px 18px;
-  border-radius: var(--radius-md);
-  backdrop-filter: blur(12px);
-  z-index: 5;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-.variant-grid-icon {
-  display: grid;
-  grid-template-columns: repeat(3, 3px);
-  gap: 3px;
-}
-
-.variant-grid-icon span {
-  width: 3px;
-  height: 3px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-}
-
-.variant-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.variant-sub {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-}
-
-.variant-main {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
 }

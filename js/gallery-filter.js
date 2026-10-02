@@ -18,16 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = card.getAttribute('data-category');
 
         if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'block';
-          setTimeout(() => {
+          card.style.display = '';
+          requestAnimationFrame(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0) scale(1)';
-          }, 50);
+          });
         } else {
           card.style.opacity = '0';
           card.style.transform = 'translateY(10px) scale(0.96)';
           setTimeout(() => {
-            card.style.display = 'none';
+            if (btn.getAttribute('data-filter') !== 'all' && card.getAttribute('data-category') !== btn.getAttribute('data-filter')) {
+              card.style.display = 'none';
+            }
           }, 250);
         }
       });

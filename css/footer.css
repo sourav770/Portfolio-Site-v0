@@ -1,0 +1,323 @@
+/* RECREATED FOOTER (Exact Match to User Reference Image) */
+
+.site-footer-v2 {
+  background-color: #040405;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+/* 1. WORKED WITH SECTION */
+.worked-with-section {
+  max-width: 1320px;
+  margin: 0 auto 60px auto;
+  padding: 0 32px;
+}
+
+.worked-with-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.worked-with-tag .dot-red {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-red-glow);
+}
+
+.worked-with-brands-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px 36px;
+}
+
+.brand-name-item {
+  font-family: var(--font-sans);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.brand-name-item:hover {
+  color: var(--accent-red);
+  transform: translateY(-2px);
+}
+
+/* 2. RED MOVING TICKER / MARQUEE */
+.ticker-marquee-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--accent-red);
+  overflow: hidden;
+  user-select: none;
+  padding: 12px 0;
+  box-shadow: 0 0 25px var(--accent-red-glow);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 0 16px;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 3. MAIN FOOTER BODY (3 COLUMNS) */
+.footer-body-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 70px 32px 50px 32px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+}
+
+/* Left Brand Column */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.film-icon-red {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 4px);
+  gap: 3px;
+  background: var(--accent-red);
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.film-icon-red span {
+  width: 4px;
+  height: 4px;
+  background: #000000;
+}
+
+.footer-bio-text {
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.65;
+  max-width: 400px;
+  margin-bottom: 28px;
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.dot-green {
+  width: 7px;
+  height: 7px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Nav & Social Columns */
+.footer-nav-col h4,
+.footer-social-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #71717a;
+  margin-bottom: 22px;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-link-list a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #d4d4d8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-link-list a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-link-list a svg {
+  color: #a1a1aa;
+  transition: color var(--transition-fast);
+}
+
+.footer-link-list a:hover svg {
+  color: var(--accent-red);
+}
+
+/* 4. BOTTOM BAR & DIVIDER */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+}
+
+.footer-bottom-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #71717a;
+}
+
+.footer-policy-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-policy-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #71717a;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-policy-links a:hover {
+  color: #ffffff;
+}
+
+/* RESPONSIVE FOOTER STYLES */
+@media (max-width: 1024px) {
+  .worked-with-brands-row {
+    gap: 20px;
+  }
+
+  .brand-name-item {
+    font-size: 1.25rem;
+  }
+
+  .footer-body-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .worked-with-brands-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-body-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 40px;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}

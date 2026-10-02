@@ -1,67 +1,457 @@
-/* EDITING WORKFLOW SECTION */
+/* ==========================================================================
+   MY PROCESS / WORKFLOW SECTION
+   Recreated from reference/my-process-reference.png
+   - Two-column editorial composition
+   - Left: Big bold typography + italic accent + technical spec
+   - Middle: Thin vertical divider
+   - Right: Interactive overlapping circular steps with smooth scale on hover
+   ========================================================================== */
 
 .workflow-section {
-  padding: 100px 0;
+  padding: 130px 0;
   position: relative;
   z-index: 2;
   border-top: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at center, rgba(248, 67, 82, 0.03) 0%, transparent 70%);
+  background-color: var(--bg-dark);
+  background: radial-gradient(ellipse 65% 55% at 75% 50%, rgba(248, 67, 82, 0.04) 0%, transparent 70%);
+  overflow: hidden;
 }
 
-.workflow-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.step-card {
+.process-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
   position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 32px 24px;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+  z-index: 2;
 }
 
-.step-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(248, 67, 82, 0.4);
+/* Side rail technical tracker (visible on wide desktop) */
+.process-side-rail {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  opacity: 0.45;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
-.step-num {
+.dot-red-rail {
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px var(--accent-red-glow);
+}
+
+/* Two-column layout */
+.process-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 0;
+}
+
+/* ── LEFT COLUMN ───────────────────────────────────────── */
+.process-col-left {
+  flex: 0 0 45%;
+  max-width: 540px;
+  padding-right: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Small section label */
+.process-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Main Heading */
+.process-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0 0 28px 0;
+}
+
+.process-heading-line {
+  display: block;
+}
+
+/* Red italic editorial accent "Magic" */
+.process-heading-magic {
+  display: block;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 3.5rem;
   font-weight: 400;
+  font-size: clamp(4.2rem, 6.6vw, 6.8rem);
   color: var(--accent-red);
-  line-height: 1;
-  margin-bottom: 16px;
-  opacity: 0.9;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 6px;
 }
 
-.step-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.step-card p {
-  font-size: 0.9rem;
+/* Supporting description */
+.process-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.75;
+  max-width: 460px;
+  margin-bottom: 0;
 }
 
-.step-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent-red);
-  transition: width 0.4s ease;
+/* ── VERTICAL DIVIDER ──────────────────────────────────── */
+.process-col-divider {
+  width: 1px;
+  min-height: 600px;
+  align-self: stretch;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 15%,
+    rgba(255, 255, 255, 0.12) 85%,
+    transparent 100%
+  );
+  flex-shrink: 0;
 }
 
-.step-card:hover .step-line {
+/* ── RIGHT COLUMN — INTERACTIVE CIRCLES ────────────────── */
+.process-col-right {
+  flex: 0 0 54%;
+  padding-left: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Container stage for absolute overlapping circles */
+.process-circles-stage {
+  position: relative;
   width: 100%;
+  max-width: 600px;
+  height: 600px;
 }
+
+/* Decorative background orbital rings */
+.process-circle-outer-ring {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: 7px;
+  left: 187px;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.process-circle-decor-ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 395px;
+  left: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Base styling for interactive circular steps */
+.process-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(14, 14, 18, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transform-origin: center center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s ease,
+    background-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Desktop absolute positioning matching reference */
+.process-circle-1 {
+  width: 270px;
+  height: 270px;
+  top: 15px;
+  left: 35px;
+  z-index: 3;
+}
+
+.process-circle-2 {
+  width: 285px;
+  height: 285px;
+  top: 75px;
+  left: 255px;
+  z-index: 2;
+}
+
+.process-circle-3 {
+  width: 275px;
+  height: 275px;
+  top: 220px;
+  left: 75px;
+  z-index: 4;
+}
+
+.process-circle-4 {
+  width: 290px;
+  height: 290px;
+  top: 290px;
+  left: 245px;
+  z-index: 3;
+}
+
+/* Step typography inside circles */
+.circle-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.85rem;
+  line-height: 1;
+  color: var(--accent-red);
+  margin-bottom: 8px;
+  transition: transform 0.35s ease;
+}
+
+.circle-title {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  max-width: 175px;
+}
+
+.circle-desc {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #8f8f9c;
+  line-height: 1.45;
+  max-width: 175px;
+  margin: 0 auto;
+  transition: color 0.35s ease;
+}
+
+/* ── HOVER INTERACTIONS ────────────────────────────────── */
+/* When any circle is hovered: dim surrounding siblings */
+.process-circles-stage:has(.process-circle:hover) .process-circle:not(:hover),
+.process-circles-stage.has-hovered-circle .process-circle:not(.is-hovered) {
+  opacity: 0.35;
+  transform: scale(0.96);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hovered / Active circle expands smoothly toward user */
+.process-circle:hover,
+.process-circle.is-hovered {
+  transform: scale(1.12);
+  z-index: 25 !important;
+  opacity: 1 !important;
+  background-color: rgba(18, 18, 24, 0.96);
+  border-color: rgba(248, 67, 82, 0.65);
+  box-shadow:
+    0 25px 60px -10px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(248, 67, 82, 0.22),
+    inset 0 0 20px rgba(248, 67, 82, 0.08);
+}
+
+.process-circle:hover .circle-num,
+.process-circle.is-hovered .circle-num {
+  transform: scale(1.05);
+}
+
+.process-circle:hover .circle-desc,
+.process-circle.is-hovered .circle-desc {
+  color: #b8b8c5;
+}
+
+/* ── RESPONSIVE DESIGN ─────────────────────────────────── */
+@media (max-width: 1200px) {
+  .process-side-rail {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workflow-section {
+    padding: 90px 0;
+  }
+
+  .process-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .process-col-left {
+    flex: 1 1 100%;
+    max-width: 680px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .process-col-divider {
+    width: 100%;
+    min-height: 1px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.12) 15%,
+      rgba(255, 255, 255, 0.12) 85%,
+      transparent 100%
+    );
+  }
+
+  .process-col-right {
+    flex: 1 1 100%;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-section {
+    padding: 70px 0;
+  }
+
+  .process-container {
+    padding: 0 20px;
+  }
+
+  .process-heading {
+    font-size: clamp(2.6rem, 11vw, 3.8rem);
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .process-heading-magic {
+    font-size: clamp(3.4rem, 13vw, 4.6rem);
+  }
+
+  .process-desc {
+    margin-bottom: 0;
+    font-size: 0.92rem;
+  }
+
+  /* Staggered overlapping vertical stack for mobile */
+  .process-circles-stage {
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 20px 0;
+  }
+
+  .process-circle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 250px;
+    height: 250px;
+    margin-top: -36px;
+  }
+
+  .process-circle:first-child {
+    margin-top: 0;
+  }
+
+  .process-circle-1 {
+    transform: translateX(-16px);
+  }
+
+  .process-circle-2 {
+    transform: translateX(16px);
+  }
+
+  .process-circle-3 {
+    transform: translateX(-16px);
+  }
+
+  .process-circle-4 {
+    transform: translateX(16px);
+  }
+
+  .process-circle-1:hover,
+  .process-circle-1.is-hovered {
+    transform: translateX(-16px) scale(1.08) !important;
+  }
+
+  .process-circle-2:hover,
+  .process-circle-2.is-hovered {
+    transform: translateX(16px) scale(1.08) !important;
+  }
+
+  .process-circle-3:hover,
+  .process-circle-3.is-hovered {
+    transform: translateX(-16px) scale(1.08) !important;
+  }
+
+  .process-circle-4:hover,
+  .process-circle-4.is-hovered {
+    transform: translateX(16px) scale(1.08) !important;
+  }
+
+  .process-circle-decor-ring,
+  .process-circle-outer-ring {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-circle {
+    width: clamp(210px, 68vw, 240px);
+    height: clamp(210px, 68vw, 240px);
+    margin-top: -28px;
+  }
+}
+

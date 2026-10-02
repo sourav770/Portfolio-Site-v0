@@ -1,0 +1,132 @@
+/* CLIENTS SECTION — Clean stat bar matching Clients_section.png */
+
+.clients-section {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  background-color: var(--bg-dark);
+}
+
+/* Full-width constrained wrapper */
+.clients-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Thin horizontal rules bracketing the row */
+.clients-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+/* Four-column stat row */
+.clients-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 56px 0;
+  gap: 0;
+}
+
+/* Individual stat block */
+.clients-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px;
+}
+
+/* Vertical separator between stats */
+.clients-stat-sep {
+  width: 1px;
+  height: 56px;
+  background-color: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+/* Big bold number — matches reference weight and size */
+.clients-stat-number {
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+/* Red "+" suffix */
+.clients-stat-plus {
+  color: var(--accent-red);
+  font-weight: 900;
+  margin-left: 2px;
+  letter-spacing: 0;
+}
+
+/* Uppercase spaced label beneath number */
+.clients-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .clients-stats-row {
+    padding: 44px 0;
+    gap: 0;
+  }
+
+  .clients-stat {
+    padding: 0 12px;
+  }
+
+  .clients-stat-number {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+
+  .clients-stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 1.8px;
+  }
+
+  .clients-stat-sep {
+    height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .clients-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 40px 0;
+    gap: 32px 0;
+  }
+
+  /* Hide vertical separators on mobile — use grid gap instead */
+  .clients-stat-sep {
+    display: none;
+  }
+
+  .clients-stat {
+    padding: 0 8px;
+  }
+
+  .clients-stat-number {
+    font-size: clamp(2.4rem, 10vw, 3rem);
+  }
+
+  .clients-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+  }
+}

@@ -1,0 +1,77 @@
+/* ABOUT ME SECTION (Reference 2nd_section_variant.png Match) */
+
+.about-section {
+  padding: 130px 0 110px 0;
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg-dark);
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.about-heading .heading-white {
+  color: #ffffff;
+  display: block;
+}
+
+.about-heading .heading-red {
+  color: var(--accent-red);
+  display: block;
+  text-shadow: 0 0 35px rgba(248, 67, 82, 0.15);
+}
+
+.about-body-copy {
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  letter-spacing: 0.1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 85px 0 65px 0;
+  }
+  
+  .about-heading {
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+
+  .about-body-copy {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    padding: 0 8px;
+  }
+}
