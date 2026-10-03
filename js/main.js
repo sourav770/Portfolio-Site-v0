@@ -109,14 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3800);
   }
 
-  // 4. Policy Links Friendly Feedback
-  document.querySelectorAll('.policy-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const policyName = link.getAttribute('data-policy') || 'Policy';
-      showToast(`${policyName}: Provided upon project onboarding.`);
-    });
-  });
 
   // 5. Copy Email Action (if present)
   const copyEmailBtn = document.getElementById('copyEmailBtn');

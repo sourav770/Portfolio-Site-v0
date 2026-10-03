@@ -261,29 +261,9 @@
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-size: 0.78rem;
   color: #71717a;
-}
-
-.footer-policy-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-policy-links a {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #71717a;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.footer-policy-links a:hover {
-  color: #ffffff;
 }
 
 /* RESPONSIVE FOOTER STYLES */
@@ -316,8 +296,8 @@
   }
 
   .footer-bottom-container {
-    flex-direction: column;
-    gap: 14px;
+    justify-content: center;
     text-align: center;
+    padding: 0 20px;
   }
 }
